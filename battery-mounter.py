@@ -30,6 +30,9 @@ for line in lines:
 		elif line.find("Unknown") != -1:
 			newstate = "safe"
 			break
+		elif line.find("Full") != -1:
+			newstate = "fast"
+			break
 		elif line.find("Discharging") != -1:
 			#if more than 10 minutes of battery, go fast
 			timestr = line[ line.find("%, ") + 3 : line.find(" remaining") ]
